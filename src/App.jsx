@@ -1,14 +1,14 @@
 import { useState } from 'react'
 import "@fontsource/poppins";
 import './App.css'
-import SearchBox from './components/SearchBox'
+import WeatherApp from './components/WeatherApp';
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <SearchBox/>
+      <WeatherApp/>
     </>
   )
 }
