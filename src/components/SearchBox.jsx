@@ -2,10 +2,13 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { useState } from 'react'
 import InfoBox from './InfoBox';
+import SearchIcon from '@mui/icons-material/Search';
 
 export default function SearchBox({updateInfo}) {
     const [city, setCity] = useState("");
     const [error, setError] = useState(false)
+
+
 
     const API_URL = "http://api.openweathermap.org/data/2.5/weather"
     const API_KEY = "697dc292b94c5bdc7f1c8da277d1991c"
@@ -14,7 +17,7 @@ export default function SearchBox({updateInfo}) {
         try {
             let response = await fetch(`${API_URL}?q=${city}&appid=${API_KEY}&units=metric`);
             let jsonResponse = await response.json();
-            // console.log(jsonResponse);
+            console.log(jsonResponse);
             let result = {
                 city: city,
                 temp: jsonResponse.main.temp,
@@ -52,10 +55,11 @@ export default function SearchBox({updateInfo}) {
 
     return(
         <>
-            <h1>Weather</h1>
+            {/* <h1>Weather</h1> */}
             <form action="" onSubmit={handleFormSubmit}>
-                <TextField id="city" label="City Name" variant="outlined" value={city} onChange={handleCityChange} required/>  
-                <Button variant="contained" size="large" type='submit' style={{marginLeft:"1rem"}}>Search</Button> 
+                {/* <TextField id="city" label="City Name" variant="outlined" value={city} onChange={handleCityChange} required/>   */}
+                <TextField id="city" label="City Name" value={city} onChange={handleCityChange} required variant="standard" />
+                <Button variant="contained" size="large" type='submit' style={{marginLeft:"1rem"}}><SearchIcon/></Button> 
                 <br />
                 {error && <p style={{color:"red"}}>No Such Place In Our API</p>}
             </form>

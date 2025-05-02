@@ -3,24 +3,81 @@ import SearchBox from './SearchBox'
 import InfoBox from './InfoBox';
 
 export default function WeatherApp() {
+
   const [weatherInfo, setWeatherInfo] = useState({
-    city: "Bilaspur",
-    temp: 42,
-    tempMin: 26,
-    tempMax: 46,
-    humidity: 47,
-    feelsLike: 43.85,
-    weather: "haze",
+    city: "Delhi",
+    temp: 32,
+    tempMin: 31.74,
+    tempMax: 35,
+    humidity: 20,
+    feelsLike: 30.68,
+    weather: "clear sky",
   })
 
   let updateInfo = (newInfo) => {
     setWeatherInfo(newInfo)
   }
 
+  // let currentDate = () => {
+  //   const timestamp = Date.now(); // current timestamp in milliseconds
+  //   const date = new Date(timestamp);
+
+  //   // Extract date and time
+  //   const formattedDate = date.toLocaleDateString();  // e.g., "5/2/2025"
+  //   const formattedTime = date.toLocaleTimeString();  // e.g., "10:23:45 AM"
+
+  //   // Get day of the week
+  //   const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  //   const dayOfWeek = daysOfWeek[date.getDay()];
+
+  //   console.log(`Date: ${formattedDate}`);
+  //   console.log(`Time: ${formattedTime}`);
+  //   console.log(`Day: ${dayOfWeek}`);
+  // }
+
+  function getCurrentDate() {
+    const timestamp = Date.now();
+    const date = new Date(timestamp);
+  
+    const formattedDate = date.toLocaleDateString();  
+    const formattedTime = date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    const dayOfWeek = daysOfWeek[date.getDay()];
+  
+    return {
+      date: formattedDate,
+      time: formattedTime,
+      day: dayOfWeek
+    };
+  }
+
+  const { date, time, day } = getCurrentDate();
+
   return (
     <>
-      <SearchBox updateInfo={updateInfo}/>
-      <InfoBox info={weatherInfo}/>
+    <main>
+      <div className="left">
+        <nav></nav>
+        <div className="bottom">
+          <div className="temp">
+            <h1>{weatherInfo.temp}&deg;c</h1>
+          </div>
+          <div className="location">
+            <h1>{weatherInfo.city}</h1>
+            <div className="datetime">
+              <p>{date}</p>
+              <p>{time}</p>
+              <p>{day}</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div className="right">
+        <SearchBox updateInfo={updateInfo}/>
+        <InfoBox info={weatherInfo}/>
+      </div>
+    </main>
     </>
   )
 }
