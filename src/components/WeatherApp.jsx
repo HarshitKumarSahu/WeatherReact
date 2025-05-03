@@ -18,23 +18,6 @@ export default function WeatherApp() {
     setWeatherInfo(newInfo)
   }
 
-  // let currentDate = () => {
-  //   const timestamp = Date.now(); // current timestamp in milliseconds
-  //   const date = new Date(timestamp);
-
-  //   // Extract date and time
-  //   const formattedDate = date.toLocaleDateString();  // e.g., "5/2/2025"
-  //   const formattedTime = date.toLocaleTimeString();  // e.g., "10:23:45 AM"
-
-  //   // Get day of the week
-  //   const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-  //   const dayOfWeek = daysOfWeek[date.getDay()];
-
-  //   console.log(`Date: ${formattedDate}`);
-  //   console.log(`Time: ${formattedTime}`);
-  //   console.log(`Day: ${dayOfWeek}`);
-  // }
-
   function getCurrentDate() {
     const timestamp = Date.now();
     const date = new Date(timestamp);
