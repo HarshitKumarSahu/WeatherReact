@@ -38,7 +38,7 @@ export default function WeatherApp() {
 
   return (
     <>
-    <main>
+    <main style={{width:"100%", height:"100%",backgroundColor:"aqua",}}>
       <div className="left">
         <nav></nav>
         <div className="bottom">
