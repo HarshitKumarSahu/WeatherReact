@@ -56,11 +56,40 @@ export default function SearchBox({updateInfo}) {
     return(
         <>
             {/* <h1>Weather</h1> */}
-            <form action="" onSubmit={handleFormSubmit}>
+            <form action="" onSubmit={handleFormSubmit} className='mb-4 text-[#f8f8f8] flex items-center justify-center flex-col'>
                 {/* <TextField id="city" label="City Name" variant="outlined" value={city} onChange={handleCityChange} required/>   */}
-                <TextField id="city" label="City Name" value={city} onChange={handleCityChange} required variant="standard" />
-                <Button variant="contained" size="large" type='submit' style={{marginLeft:"1rem"}}><SearchIcon/></Button> 
-                <br />
+                {/* <TextField className='text-[#f8f8f8] mix-blend-difference w-full' id="city" label="City Name" value={city} onChange={handleCityChange} required variant="standard" /> */}
+                <div className='flex items-center justify-center'>
+                    <TextField
+                        id="city"
+                        label="City Name"
+                        value={city}
+                        onChange={handleCityChange}
+                        required
+                        variant="standard"
+                        fullWidth
+                        InputProps={{
+                            style: { color: '#d3d3d3' }  // Text color
+                        }}
+                        InputLabelProps={{
+                            style: { color: '#d3d3d3' }  // Label color
+                        }}
+                    />
+                    {/* <Button variant="contained" size="large" type='submit' style={{marginLeft:"1rem"}}><SearchIcon/></Button>  */}
+                    <Button
+                        variant="contained"
+                        size="large"
+                        type="submit"
+                        style={{
+                            marginLeft: '1rem',
+                            backgroundColor: '#f87c56',   // custom dark blue
+                            color: '#f8f8f8'
+                        }}
+                    >
+                        <SearchIcon />
+                    </Button>
+                </div>
+                
                 {error && <p style={{color:"red"}}>No Such Place In Our API</p>}
             </form>
         </>

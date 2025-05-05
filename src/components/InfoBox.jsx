@@ -28,12 +28,38 @@ export default function InfoBox({info}) {
 
     return(
 
-        <div>
-            <p>Temperature : {info.temp}&deg;c</p>
+        <div className='w-full h-[80%] flex items-start justify-center flex-col gap-8 text-[1.25vw]'>
+            <div className='flex items-center justify-between w-full'>
+                <p>Temperature :</p>
+                <p>{info.temp}&deg;c</p>
+            </div>
+            <div className='flex items-center justify-between w-full'>
+                <p>Minimum Temperature :</p>
+                <p>{info.tempMin}&deg;c</p>
+            </div>
+            <div className='flex items-center justify-between w-full'>
+                <p>Maximum Temperature :</p>
+                <p>{info.tempMax}&deg;c</p>
+            </div>
+            <div className='flex items-center justify-between w-full'>
+                <p>Humidity: :</p>
+                <p>{info.humidity}</p>
+            </div>
+            <div className='flex items-center justify-between w-full'>
+                <p>Right now its feel's like</p>
+                <p><i>{info.feelsLike}</i></p>
+            </div>
+            <div className='flex items-center justify-between w-full'>
+                <p>Its a</p>
+                <p>{info.weather}</p>
+            </div>
+
+            {/* <p>Temperature : {info.temp}&deg;c</p>
             <p>Minimum Temperature : {info.tempMin}&deg;c</p>
             <p>Maximum Temperature : {info.tempMax}&deg;c</p>
             <p>Humidity: {info.humidity}</p>
-            <p>Right now its feel's like <i>{info.feelsLike} and its {info.weather}</i></p>
+            <p>Right now its feel's like <i>{info.feelsLike}</i></p>
+            <p>Its {info.weather}</p> */}
         </div>
 
         // <Card sx={{ maxWidth: 345 }} style={{marginTop:"1rem"}}>
