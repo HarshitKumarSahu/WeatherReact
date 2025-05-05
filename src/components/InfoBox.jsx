@@ -28,7 +28,7 @@ export default function InfoBox({info}) {
 
     return(
 
-        <div className='w-full h-[80%] flex items-start justify-center flex-col gap-8 text-[1.25vw]'>
+        <div className='w-full h-[80%] flex items-start justify-center flex-col gap-8 text-[1.25vw] text-[#d3d3d3]'>
             <div className='flex items-center justify-between w-full'>
                 <p>Temperature :</p>
                 <p>{info.temp}&deg;c</p>
@@ -42,16 +42,19 @@ export default function InfoBox({info}) {
                 <p>{info.tempMax}&deg;c</p>
             </div>
             <div className='flex items-center justify-between w-full'>
-                <p>Humidity: :</p>
-                <p>{info.humidity}</p>
+                <p>Humidity: </p>
+                <p>{info.humidity}%</p>
             </div>
             <div className='flex items-center justify-between w-full'>
                 <p>Right now its feel's like</p>
-                <p><i>{info.feelsLike}</i></p>
+                {/* <p><i>{info.feelsLike}</i></p> */}
+                <p>{info.feelsLike}&deg;c</p>
             </div>
             <div className='flex items-center justify-between w-full'>
                 <p>Its a</p>
-                <p>{info.weather}</p>
+                {/* <p>{info.weather}</p> */}
+                <p>{info.weather.charAt(0).toUpperCase() + info.weather.slice(1)}</p>
+
             </div>
 
             {/* <p>Temperature : {info.temp}&deg;c</p>
