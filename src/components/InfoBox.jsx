@@ -17,7 +17,7 @@ export default function InfoBox({info}) {
         "moderate rain": "https://images.unsplash.com/photo-1685731840342-893fdd8074e0?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8bW9kZXJhdGUlMjByYWlufGVufDB8fDB8fHww",
         "heavy intensity rain": "https://images.unsplash.com/photo-1434118489318-42a0e62c6235?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "thunderstorm": "https://images.unsplash.com/photo-1605727216801-e27ce1d0cc28?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dGh1bmRlcnN0b3JtfGVufDB8fDB8fHww",
-        "snow": "https://images.unsplash.com/photo-1491002052546-bf38f186af56?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHNub3d8ZW58MHx8MHx8fDA%3D",
+        "Light snow": "https://images.unsplash.com/photo-1491002052546-bf38f186af56?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHNub3d8ZW58MHx8MHx8fDA%3D",
         "fog": "https://images.unsplash.com/photo-1543968996-ee822b8176ba?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bWlzdHxlbnwwfHwwfHx8MA%3D%3D",
         "mist": "https://plus.unsplash.com/premium_photo-1669802766544-40eba66c4fa0?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8bWlzdHxlbnwwfHwwfHx8MA%3D%3D",
         "haze": "https://images.unsplash.com/photo-1530809783266-c54e7919f95d?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8aGF6ZXxlbnwwfHwwfHx8MA%3D%3D",
@@ -28,7 +28,7 @@ export default function InfoBox({info}) {
 
     return(
 
-        <div className='w-full h-[80%] flex items-start justify-center flex-col gap-8 text-[1.25vw] text-[#d3d3d3]'>
+        <div className='w-full h-[80%] flex items-start justify-center flex-col gap-8 sm:text-[1.25vw] text-[5vw] sm:text-[#d3d3d3] text-[#1f1f1f]'>
             <div className='flex items-center justify-between w-full'>
                 <p>Temperature :</p>
                 <p>{info.temp}&deg;c</p>
