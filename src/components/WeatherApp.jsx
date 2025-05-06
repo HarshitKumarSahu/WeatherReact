@@ -12,9 +12,7 @@ export default function WeatherApp() {
     humidity: 20,
     feelsLike: 30.68,
     weather: "clear sky",
-    // weather: "snow"
   })
-
 
   let updateInfo = (newInfo) => {
     setWeatherInfo(newInfo)
@@ -61,8 +59,6 @@ export default function WeatherApp() {
 
   return (
     <>
-    {/* <main className="w-full h-screen flex items-center justify-center bg-cover bg-center" style={{backgroundImage: "url('https://images.unsplash.com/photo-1584267385494-9fdd9a71ad75?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHdlYXRoZXJ8ZW58MHx8MHx8fDA%3D')"}}> */}
-    {/* <main className="w-full h-screen flex items-center justify-between sm:flex-col bg-cover bg-center" style={{ backgroundImage: `url('${bgUrl}')` }}> */}
     <main className="w-full h-screen  flex flex-col sm:flex-row items-center sm:justify-between justify-center bg-cover bg-center" style={{ backgroundImage: `url('${bgUrl}')` }}>
       <div className="left sm:w-[50%] sm:h-[100%] h-auto w-full flex items-center justify-center flex-col sm:p-24 p-6 text-[#f8f8f8]">
         <nav className='top h-[50%] w-full'>
@@ -82,8 +78,6 @@ export default function WeatherApp() {
               </div>
             </div>
           </div>
-          
-
         </div>
       </div>
       <div className="right left sm:w-1/3 w-full sm:h-[100%] h-auto flex items-center sm:gap-2 gap-8 justify-center flex-col sm:p-16 p-6 text-zinc inset-0 sm:bg-black bg-black-900 sm:bg-opacity-25 bg-opacity-05 backdrop-blur-sm">

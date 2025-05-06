@@ -8,8 +8,6 @@ export default function SearchBox({updateInfo}) {
     const [city, setCity] = useState("");
     const [error, setError] = useState(false)
 
-
-
     const API_URL = "http://api.openweathermap.org/data/2.5/weather"
     const API_KEY = "697dc292b94c5bdc7f1c8da277d1991c"
 
@@ -33,9 +31,7 @@ export default function SearchBox({updateInfo}) {
             // setError("No Such Place In Our API")
             throw err;
         }
-
     }
-   
 
     let handleCityChange = (evt) => {
         setCity(evt.target.value)
@@ -55,10 +51,7 @@ export default function SearchBox({updateInfo}) {
 
     return(
         <>
-            {/* <h1>Weather</h1> */}
             <form action="" onSubmit={handleFormSubmit} className='mb-4 text-[#f8f8f8] flex items-center justify-center flex-col'>
-                {/* <TextField id="city" label="City Name" variant="outlined" value={city} onChange={handleCityChange} required/>   */}
-                {/* <TextField className='text-[#f8f8f8] mix-blend-difference w-full' id="city" label="City Name" value={city} onChange={handleCityChange} required variant="standard" /> */}
                 <div className='flex items-center justify-center'>
                     <TextField
                         id="city"
@@ -75,7 +68,6 @@ export default function SearchBox({updateInfo}) {
                             style: { color: '#d3d3d3' }  // Label color
                         }}
                     />
-                    {/* <Button variant="contained" size="large" type='submit' style={{marginLeft:"1rem"}}><SearchIcon/></Button>  */}
                     <Button
                         variant="contained"
                         size="large"
@@ -89,7 +81,6 @@ export default function SearchBox({updateInfo}) {
                         <SearchIcon />
                     </Button>
                 </div>
-                
                 {error && <p style={{color:"red"}}>No Such Place In Our API</p>}
             </form>
         </>
